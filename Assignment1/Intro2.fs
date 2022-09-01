@@ -34,24 +34,24 @@ let e3 = Prim("+", Prim("*", Var "b", CstI 9), Var "a");;
 
 (* Evaluation within an environment *)
 
-let rec eval e (env : (string * int) list) : int =
+let rec evalold e (env : (string * int) list) : int =
     match e with
     | CstI i            -> i
     | Var x             -> lookup env x 
-    | Prim("+", e1, e2) -> eval e1 env + eval e2 env
-    | Prim("*", e1, e2) -> eval e1 env * eval e2 env
-    | Prim("-", e1, e2) -> eval e1 env - eval e2 env
-    | Prim("max", e1, e2) -> match (eval e1 env), (eval e2 env) with
+    | Prim("+", e1, e2) -> evalold e1 env + evalold e2 env
+    | Prim("*", e1, e2) -> evalold e1 env * evalold e2 env
+    | Prim("-", e1, e2) -> evalold e1 env - evalold e2 env
+    | Prim("max", e1, e2) -> match (evalold e1 env), (evalold e2 env) with
                                 | x, y when x > y -> x
                                 | _, y  -> y
-    | Prim("min", e1, e2) -> match (eval e1 env), (eval e2 env) with
+    | Prim("min", e1, e2) -> match (evalold e1 env), (evalold e2 env) with
                                 | x, y when x < y -> x
                                 | _, y  -> y
-    | Prim("==", e1, e2) -> if (eval e1 env) = (eval e2 env) then 1 else 0 
+    | Prim("==", e1, e2) -> if (evalold e1 env) = (evalold e2 env) then 1 else 0 
     | Prim _            -> failwith "unknown primitive";;
 
 
-let rec eval1 e (env : (string * int) list) : int =
+let rec eval e (env : (string * int) list) : int =
     match e with
     | CstI i            -> i
     | Var x             -> lookup env x 
@@ -67,11 +67,6 @@ let rec eval1 e (env : (string * int) list) : int =
                             |"==" -> if i1 = i2 then 1 else 0
                             | _ -> failwith "unknown Operator";;
                             
-                                
-        
-
-
-   
 
 let testmax = printfn "%d" (eval (Prim("max", CstI 3, CstI 5)) env);;
 
