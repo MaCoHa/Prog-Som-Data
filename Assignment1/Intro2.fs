@@ -86,4 +86,45 @@ let rec fmt a: string =
     | Add (x, y) -> "(" + (fmt x) + " + " + (fmt y) + ")"
     | Sub (x, y) -> "(" + (fmt x) + " - " + (fmt y) + ")"
     | Mul (x, y) -> "(" + (fmt x) + " * " + (fmt y) + ")"
-    
+
+
+let rec simplify a : aexpr =
+    match a with
+    | CstI x -> CstI x
+    | Var x -> Var x
+    | Add (x, y) ->
+        match simplify x, simplify y with
+        | CstI x, CstI y -> CstI (x + y)
+        | Var x, CstI y ->
+            match x, y with
+            | x, 0 -> Var x
+            | x, y -> Add (Var x, CstI y)
+        | CstI x, Var y ->
+            match x, y with
+            | 0, y -> Var y
+            | x, y -> Add (CstI x, Var y)
+        | x, y -> simplify (Add (simplify x, simplify y))
+    | Sub (x, y) ->
+        match simplify x, simplify y with
+        | CstI x, CstI y -> CstI (x - y)
+        | Var x, CstI y ->
+            match x, y with
+            | x, 0 -> Var x
+            | x, y -> Sub (Var x, CstI y)
+        | x, y -> simplify (Sub (simplify x, simplify y))
+    | Mul (x, y) ->
+        match simplify x, simplify y with
+        | CstI x, CstI y -> CstI (x * y)
+        | Var x, CstI y ->
+            match x, y with
+            | _, 0 -> CstI 0
+            | x, 1 -> Var x
+            | x, y -> Mul (Var x, CstI y)
+        | CstI x, Var y ->
+            match x, y with
+            | 0, _ -> CstI 0
+            | 1, y -> Var y
+            | x, y -> Mul (CstI x, Var y)
+        | x, y -> simplify (Mul (simplify x, simplify y))
+
+        
