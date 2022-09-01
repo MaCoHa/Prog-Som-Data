@@ -32,7 +32,6 @@ let e2 = Prim("+", CstI 3, Var "a");;
 
 let e3 = Prim("+", Prim("*", Var "b", CstI 9), Var "a");;
 
-
 (* Evaluation within an environment *)
 
 let rec eval e (env : (string * int) list) : int =
@@ -65,3 +64,67 @@ let e1v  = eval e1 env;;
 let e2v1 = eval e2 env;;
 let e2v2 = eval e2 [("a", 314)];;
 let e3v  = eval e3 env;;
+
+
+
+type aexpr =
+    | CstI of int
+    | Var of string
+    | Add of aexpr * aexpr
+    | Sub of aexpr * aexpr
+    | Mul of aexpr * aexpr;;
+
+
+let a1 = Sub (Var "v", Add (Var "w", Var "z"))
+let a2 = Mul (CstI 2, Sub (Var "v", Add (Var "w", Var "z")))
+let a3 = Add(Var "x", Add(Var "y", Add(Var "z", Var "v")))
+
+let rec fmt a: string =
+    match a with
+    | CstI x -> string x
+    | Var x -> x
+    | Add (x, y) -> "(" + (fmt x) + " + " + (fmt y) + ")"
+    | Sub (x, y) -> "(" + (fmt x) + " - " + (fmt y) + ")"
+    | Mul (x, y) -> "(" + (fmt x) + " * " + (fmt y) + ")"
+
+
+let rec simplify a : aexpr =
+    match a with
+    | CstI x -> CstI x
+    | Var x -> Var x
+    | Add (x, y) ->
+        match simplify x, simplify y with
+        | CstI x, CstI y -> CstI (x + y)
+        | Var x, CstI y ->
+            match x, y with
+            | x, 0 -> Var x
+            | x, y -> Add (Var x, CstI y)
+        | CstI x, Var y ->
+            match x, y with
+            | 0, y -> Var y
+            | x, y -> Add (CstI x, Var y)
+        | x, y -> simplify (Add (simplify x, simplify y))
+    | Sub (x, y) ->
+        match simplify x, simplify y with
+        | CstI x, CstI y -> CstI (x - y)
+        | Var x, CstI y ->
+            match x, y with
+            | x, 0 -> Var x
+            | x, y -> Sub (Var x, CstI y)
+        | x, y -> simplify (Sub (simplify x, simplify y))
+    | Mul (x, y) ->
+        match simplify x, simplify y with
+        | CstI x, CstI y -> CstI (x * y)
+        | Var x, CstI y ->
+            match x, y with
+            | _, 0 -> CstI 0
+            | x, 1 -> Var x
+            | x, y -> Mul (Var x, CstI y)
+        | CstI x, Var y ->
+            match x, y with
+            | 0, _ -> CstI 0
+            | 1, y -> Var y
+            | x, y -> Mul (CstI x, Var y)
+        | x, y -> simplify (Mul (simplify x, simplify y))
+
+        
