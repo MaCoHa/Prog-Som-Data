@@ -52,14 +52,7 @@ let rec eval e (env : (string * int) list) : int =
                             | _ -> failwith "unknown Operator";;
                             
 
-let testmax = printfn "%d" (eval (Prim("max", CstI 3, CstI 5)) env);;
 
-let testmin = printfn "%d" (eval (Prim("min", CstI 3, CstI 5)) env);;
-let testeq1 = printfn "%d" (eval (Prim("==", CstI 3, CstI 5)) env);;
-let testeq2 = printfn "%d" (eval (Prim("==", CstI 5, CstI 5)) env);;
-    
-
-   
 let e1v  = eval e1 env;;
 let e2v1 = eval e2 env;;
 let e2v2 = eval e2 [("a", 314)];;
