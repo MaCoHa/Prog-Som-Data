@@ -96,7 +96,7 @@ let rec simplify a : aexpr =
             match x, y with
             | 0, y -> Var y
             | x, y -> Add (CstI x, Var y)
-        | x, y -> simplify (Add (simplify x, simplify y))
+        | x, y -> simplify (Add (x, y))
     | Sub (x, y) ->
         match simplify x, simplify y with
         | CstI x, CstI y -> CstI (x - y)
@@ -104,7 +104,8 @@ let rec simplify a : aexpr =
             match x, y with
             | x, 0 -> Var x
             | x, y -> Sub (Var x, CstI y)
-        | x, y -> simplify (Sub (simplify x, simplify y))
+        | Var x, Var y when x = y -> CstI 0
+        | x, y -> Sub (x, y)
     | Mul (x, y) ->
         match simplify x, simplify y with
         | CstI x, CstI y -> CstI (x * y)
@@ -118,6 +119,6 @@ let rec simplify a : aexpr =
             | 0, _ -> CstI 0
             | 1, y -> Var y
             | x, y -> Mul (CstI x, Var y)
-        | x, y -> simplify (Mul (simplify x, simplify y))
+        | x, y -> simplify (Mul (x, y))
 
         

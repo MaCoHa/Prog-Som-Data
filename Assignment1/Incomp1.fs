@@ -1,5 +1,10 @@
 ﻿module Incomp1
 
+
+//exe 2.1
+//redeclared expr.Let to support sequential bindings
+//reassigned all 'let e_ = expr' below to match the new type
+//changed the Let case of 'eval', 'closedin', 'nsubst', 'subst' to support the new declaration
 type expr = 
   | CstI of int
   | Var of string
@@ -223,6 +228,8 @@ let rec minus (xs, ys) =
 
 (* Find all variables that occur free in expression e *)
 
+//exe 2.2
+//Changed the Let case of 'freevars' to support the declaration from exe 2.1
 let rec freevars e : string list =
     match e with
     | CstI i -> []
@@ -261,6 +268,8 @@ let rec getindex vs x =
 
 (* Compiling from expr to texpr *)
 
+//exe 2.3
+//Changed the Let case of 'tcomp' to support the declaration from exe 2.1
 let rec tcomp (e : expr) (cenv : string list) : texpr =
     match e with
     | CstI i -> TCstI i
@@ -375,7 +384,9 @@ type stackvalue =
   | Bound of string;;                   (* A bound variable *)
 
 (* Compilation to a list of instructions for a unified-stack machine *)
-//
+
+//NOTE: this function did not compile after expr.Let was redeclared in 2.1
+
 // let rec scomp (e : expr) (cenv : stackvalue list) : sinstr list =
 //     match e with
 //     | CstI i -> [SCstI i]
