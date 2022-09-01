@@ -51,6 +51,27 @@ let rec eval e (env : (string * int) list) : int =
     | Prim _            -> failwith "unknown primitive";;
 
 
+let rec eval1 e (env : (string * int) list) : int =
+    match e with
+    | CstI i            -> i
+    | Var x             -> lookup env x 
+    | Prim(opr, e1, e2) -> 
+                            let i1 = eval e1 env
+                            let i2 = eval e2 env
+                            match opr with
+                            |"+" -> i1 + i2
+                            |"-" -> i1 - i2
+                            |"*" -> i1 * i2
+                            |"max" -> if i1 > i2 then i1 else i2
+                            |"min" -> if i1 > i2 then i2 else i1
+                            |"==" -> if i1 = i2 then 1 else 0
+                            | _ -> failwith "unknown Operator";;
+                            
+                                
+        
+
+
+   
 
 let testmax = printfn "%d" (eval (Prim("max", CstI 3, CstI 5)) env);;
 
