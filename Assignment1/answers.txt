@@ -1,0 +1,22 @@
+﻿Group: "The Almost Empty Group"
+Members: aleso - coha - jkrs
+
+EXERCISE 1
+exe1.1  - Intro2.fs
+            i   - :49-51
+            ii  - :56-59
+            iii - :42-52
+            iv  - :27
+            v   - :41
+exe1.2  - Intro2.fs
+            i   - :63-68
+            ii  - :71-73
+            iii - :75-81
+            iv  - :84-128
+            v   - NOT SOLVED
+exe1.4  - Exercise1.4/Program.cs
+
+EXERCISE 2
+exe2.1  - Incomp1.fs:11 + Incomp1.fs:50-59
+exe2.2  - Incomp1.fs:237-242
+exe2.3  - Incomp1.fs:277-284
