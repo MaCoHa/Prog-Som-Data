@@ -13,7 +13,7 @@ exe1.2  - Intro2.fs
             ii  - :71-73
             iii - :75-81
             iv  - :84-128
-            v   - NOT SOLVED
+            v   - :125-135
 exe1.4  - Exercise1.4/Program.cs
 
 EXERCISE 2

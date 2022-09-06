@@ -122,4 +122,14 @@ let rec simplify a : aexpr =
         | x, y -> simplify (Mul (x, y))
 
 
-        
+let rec differential a dx: aexpr =
+    match a with
+    | CstI _ -> CstI 0
+    | Var x when x = dx -> CstI 1
+    | Var _ -> CstI 0
+    | Add (a1, a2) -> Add(differential a1 dx, differential a2 dx)
+    | Sub (a1, a2) -> Sub(differential a1 dx, differential a2 dx)
+    | Mul (a1, a2) -> Add(
+                          Mul(differential a1 dx, a2),
+                          Mul(a1, differential a2 dx)
+                      )
