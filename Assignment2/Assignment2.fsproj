@@ -6,9 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
     <Compile Include="Incomp1.fs" />
-    <Content Include="Answers.txt" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
 </Project>

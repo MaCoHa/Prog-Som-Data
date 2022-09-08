@@ -386,24 +386,28 @@ type stackvalue =
 
 //NOTE: this function did not compile after expr.Let was redeclared in 2.1
 
-// let rec scomp (e : expr) (cenv : stackvalue list) : sinstr list =
-//     match e with
-//     | CstI i -> [SCstI i]
-//     | Var x  -> [SVar (getindex cenv (Bound x))]
-//     | Let(x, erhs, ebody) ->
-//           scomp erhs cenv @ scomp ebody (Bound x :: cenv) @ [SSwap; SPop]
-//     | Prim("+", e1, e2) -> 
-//           scomp e1 cenv @ scomp e2 (Value :: cenv) @ [SAdd] 
-//     | Prim("-", e1, e2) -> 
-//           scomp e1 cenv @ scomp e2 (Value :: cenv) @ [SSub] 
-//     | Prim("*", e1, e2) -> 
-//           scomp e1 cenv @ scomp e2 (Value :: cenv) @ [SMul] 
-//     | Prim _ -> failwith "scomp: unknown operator";;
+let rec scomp (e : expr) (cenv : stackvalue list) : sinstr list =
+    match e with
+    | CstI i -> [SCstI i]
+    | Var x  -> [SVar (getindex cenv (Bound x))]
+    | Let(ves, ebody) ->
+        match ves with
+        | (var, e) :: [] ->
+            scomp e cenv @ scomp ebody (Bound var :: cenv) @ [SSwap; SPop]
+        | (var, e) :: es ->
+            scomp e cenv @ scomp (Let(ves, ebody)) (Bound var :: cenv) @ [SSwap; SPop]          
+    | Prim("+", e1, e2) -> 
+        scomp e1 cenv @ scomp e2 (Value :: cenv) @ [SAdd] 
+    | Prim("-", e1, e2) -> 
+        scomp e1 cenv @ scomp e2 (Value :: cenv) @ [SSub] 
+    | Prim("*", e1, e2) -> 
+        scomp e1 cenv @ scomp e2 (Value :: cenv) @ [SMul] 
+    | Prim _ -> failwith "scomp: unknown operator";;
 
-// let s1 = scomp e1 [];;
-// let s2 = scomp e2 [];;
-// let s3 = scomp e3 [];;
-// let s5 = scomp e5 [];;
+let s1 = scomp e1 [];;
+let s2 = scomp e2 [];;
+let s3 = scomp e3 [];;
+let s5 = scomp e5 [];;
 
 (* Output the integers in list inss to the text file called fname: *)
 
@@ -412,3 +416,22 @@ let intsToFile (inss : int list) (fname : string) =
     System.IO.File.WriteAllText(fname, text);;
 
 (* -----------------------------------------------------------------  *)
+
+
+
+
+let sinstrToInt = function
+    | SCstI x -> [0; x]
+    | SVar  x -> [1; x]
+    | SAdd    -> [2]
+    | SSub    -> [3]
+    | SMul    -> [4]
+    | SPop    -> [5]
+    | SSwap   -> [6]
+
+let rec assemble s = List.fold (fun acc ans -> acc @ sinstrToInt ans) [] s
+
+
+
+
+
