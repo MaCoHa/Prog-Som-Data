@@ -1,0 +1,10 @@
+﻿
+
+
+BCD exercises:
+    exc 2.1
+            (remove "gm" if it should not be there. "g" is for "global", not returning after first match
+            and "m" is for multi-line, making it possible to have multiple lines as single input)
+        a: /.*(?:42).*/gm     
+        b: /^(?!.*42).*/gm
+        c: /^(?!.*42).*/gm              (Taking into account that number-strings should not be multi-liners)
