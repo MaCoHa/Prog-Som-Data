@@ -35,7 +35,7 @@ and Tokenize  lexbuf =
 
 # 13 "hello.fsl"
   // ending
-// this is array [||]
+
 [<EntryPoint>]
 let main argv =
       printfn "Hello World from FsLex!\n\nPlease pass a digit:"
