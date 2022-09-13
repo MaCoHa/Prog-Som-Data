@@ -1,0 +1,16 @@
+﻿
+
+### HelloLex
+
+## Question 1
+the fsl file have a regular expression that parses a string
+as long as it consists of numbers between 0 and 9
+else the parser will fail
+
+## Question 2
+
+# 2.1
+a single hello.fs file is generated
+
+# 2.2
+from the generated repport it states that there are 3 states
