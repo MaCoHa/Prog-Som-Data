@@ -1,6 +1,19 @@
 ﻿
 
 
+PLC Exercise 2.4
+    can be found in 
+    Incomp1.fs: lines 423 - 432
+
+PLC Exercise 2.5
+    works and outputs 34 
+    can be found in 
+    Program.fs: lines 21 - 26 
+    and Machine.class
+    
+ Exercise 3.2  
+    see picture Exercise3.2.jpg
+
 BCD exercises:
     exc 2.1
             (remove "gm" if it should not be there. "g" is for "global", not returning after first match
