@@ -8,3 +8,7 @@ BCD exercises:
         a: /.*(?:42).*/gm     
         b: /^(?!.*42).*/gm
         c: /^(?!.*42).*/gm              (Taking into account that number-strings should not be multi-liners)
+        
+    exc 2.2
+        a:      The NFA has been drawn and saved in the file named "NFA.png" within this folder.
+        b:      The DFA has been drawn and saved in the file named "DFA.png" within this folder.
