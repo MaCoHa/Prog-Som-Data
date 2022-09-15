@@ -1,0 +1,18 @@
+
+
+Exercise 3.3
+    Let z = (17) in z + 2 * 3 end EOF
+    
+rule A  Expr EOF
+rule F  LET NAME EQ Expr IN Expr END EOF
+rule G  LET NAME EQ Expr IN (Expr TIMES Expr) END EOF
+rule C  LET NAME EQ Expr IN (Expr TIMES CSTINT) END EOF
+rule H  LET NAME EQ Expr IN ((Expr PLUS Expr) TIMES CSTINT) END EOF
+rule C  LET NAME EQ Expr IN ((Expr PLUS CSTINT) TIMES CSTINT) END EOF
+rule b  LET NAME EQ Expr IN ((NAME PLUS CSTINT) TIMES CSTINT) END EOF
+rule C  LET NAME EQ CSTINT IN NAME PLUS CSTINT TIMES CSTINT END EOF
+        let z = 17 In z + 2 * 3 end EOF
+
+
+Exercise 3.4
+See Exercise3.4.pdf 
