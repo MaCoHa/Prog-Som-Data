@@ -12,3 +12,4 @@ BCD exercises:
     exc 2.2
         a:      The NFA has been drawn and saved in the file named "NFA.png" within this folder.
         b:      The DFA has been drawn and saved in the file named "DFA.png" within this folder.
+        
