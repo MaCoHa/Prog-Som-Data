@@ -7,6 +7,7 @@ module Expr
 open System.IO
 open Absyn
 
+
 (* From file expr/expr.sml * Simple arithmetic expressions *)
  
 let e1 = Let("z", CstI 17, Prim("+", Var "z", Var "z"));
@@ -314,6 +315,11 @@ let rec scomp e (cenv : rtvalue list) : sinstr list =
 let s1 = scomp e1 []
 let s2 = scomp e2 []
 let s3 = scomp e3 []
+
+
+let compString (str:string) : sinstr list =
+    let exp = Parse.fromString str
+    scomp exp []
 
 (* Correctness: eval e [] [] equals seval (scomp e []) [] 
    for an expression with no free variables.

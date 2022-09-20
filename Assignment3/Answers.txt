@@ -19,6 +19,8 @@ See Exercise3.4.pdf
 
 
 Exercise 3.5
+Filles in Expr
+
 Inputs from the book
 
 fromString "1 + 2 * 3";;
@@ -77,6 +79,8 @@ returns :: Absyn.expr =
                       Var "x")))
 
 Exercise 3.6
+
+file Expr/Expr.fs line 320 - 323;
 
 
 Exercise 3.7
