@@ -8,9 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="019f7161-7b9f-443c-8475-5639af018ab1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Assignment2/Program.fs" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment2/Program.fs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Expr/ExprLex.fs" beforeDir="false" afterPath="$PROJECT_DIR$/Expr/ExprLex.fs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Expr/ExprPar.fs" beforeDir="false" afterPath="$PROJECT_DIR$/ExprPar.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment3.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assignment3.dir/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +16,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/8a1cde8f2ac96f2323a0965243b10cb011a00/08/fb4f1fcb/FsLexYacc.Runtime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jack2/Desktop/prdat/Prog-Som-Data/Assignment2/Program.fs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Expr/Expr.fs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jack2/Desktop/prdat/Prog-Som-Data/Assignment3/Expr/ExprLex.fs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jack2/Desktop/prdat/Prog-Som-Data/Assignment3/Expr/ExprLex.fs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Expr/Parse.fs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -73,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663669114143</updated>
       <workItem from="1663669120659" duration="660000" />
-      <workItem from="1663669820613" duration="712000" />
+      <workItem from="1663669820613" duration="3421000" />
     </task>
     <servers />
   </component>
@@ -90,6 +92,28 @@
             <State />
           </value>
         </entry>
+        <entry key="ea7988f8-2e9b-4df2-a1df-e119b139b0db">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="2642a4fe29d70e6f56fe62f0d3ed66cbda5a2688..bcd88b11096601557e9715c88d1cc27be775ec9b" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="ea7988f8-2e9b-4df2-a1df-e119b139b0db" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>

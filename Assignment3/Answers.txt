@@ -80,7 +80,10 @@ returns :: Absyn.expr =
 
 Exercise 3.6
 
-file Expr/Expr.fs line 320 - 323;
+file Expr/Parse.fs line 35 - 37;
+    Use this command
+    $ dotnet fsi -r FsLexYacc.Runtime.dll Absyn.fs ExprPar.fs ExprLex.fs Expr.fs Parse.fs
+
 
 
 Exercise 3.7

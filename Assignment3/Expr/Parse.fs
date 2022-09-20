@@ -35,3 +35,4 @@ let fromFile (filename : string) =
 let compString (str:string) : Expr.sinstr list =
     let exp = fromString str
     Expr.scomp exp []
+
