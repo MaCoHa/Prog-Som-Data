@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Expr\Absyn.fs" />
+    <Compile Include="Expr\Expr.fs" />
+    <Compile Include="Expr\Parse.fs" />
+    <Compile Include="Expr\ExprPar.fsi" />
+    <Compile Include="Expr\ExprPar.fs" />
+    <Content Include="Expr\README.TXT" />
+    <Content Include="Expr\FsLexYacc.Runtime.dll" />
+    <Content Include="Expr\ExprPar.fsy" />
+    <Content Include="Expr\ExprLex.fsl" />
+    <Compile Include="Expr\ExprLex.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>

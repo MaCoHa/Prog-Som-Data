@@ -1,8 +1,8 @@
 ﻿open Assignment2.Incomp1
 
-//testing script
+//test script
 let printSuccess = true
-let test case expected actual =
+let test case actual expected =
     if actual = expected
     then
         if printSuccess
