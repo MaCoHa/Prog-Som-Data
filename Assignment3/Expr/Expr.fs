@@ -317,9 +317,6 @@ let s2 = scomp e2 []
 let s3 = scomp e3 []
 
 
-let compString (str:string) : sinstr list =
-    let exp = Parse.fromString str
-    scomp exp []
 
 (* Correctness: eval e [] [] equals seval (scomp e []) [] 
    for an expression with no free variables.
