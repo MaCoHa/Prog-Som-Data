@@ -87,3 +87,9 @@ file Expr/Parse.fs line 35 - 37;
 
 
 Exercise 3.7
+
+file Expr/Absyn.fs line 12
+file Expr/ExprLex.fsl line 37 - 39
+file Expr/ExprPar.fsy line 14
+
+After compiling it now has 25 states
