@@ -11,6 +11,7 @@
 %token PLUS MINUS TIMES DIVIDE EQ
 %token END IN LET
 %token LPAR RPAR
+%token IF THEN ELSE
 %token EOF
 
 %left MINUS PLUS        /* lowest precedence  */
