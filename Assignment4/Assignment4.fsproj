@@ -16,7 +16,7 @@
     <Content Include="Fun\grammar.txt" />
     <Content Include="Fun\FunLex.fsl" />
     <Content Include="Fun\FunPar.fsy" />
-    <Content Include="README.TXT" />
+    <Content Include="Fun\README.TXT" />
     <Compile Include="TypedFun\TypedFun.fs" />
     <Content Include="TypedFun\README.TXT" />
     <Compile Include="Program.fs" />
