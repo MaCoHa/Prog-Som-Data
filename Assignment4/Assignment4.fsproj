@@ -13,6 +13,7 @@
     <Compile Include="Fun\FunLex.fs" />
     <Compile Include="Fun\FunPar.fsi" />
     <Compile Include="Fun\FunPar.fs" />
+    <Content Include="Answers.txt" />
     <Content Include="Fun\grammar.txt" />
     <Content Include="Fun\FunLex.fsl" />
     <Content Include="Fun\FunPar.fsy" />
