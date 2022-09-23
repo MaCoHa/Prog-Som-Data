@@ -58,10 +58,10 @@ let rec eval (e : expr) (env : value env) : int =
     | Call(Var f, eArgs) -> 
       let fClosure = lookup env f
       match fClosure with
-      | Closure (f, x, fBody, fDeclEnv) ->
+      | Closure (f, xs, fBody, fDeclEnv) ->
         //let xVal = Int(eval eArg env)
         let xVals = List.fold (fun acc eArg -> Int(eval eArg env) :: acc) [] eArgs
-        let xNameVals = List.zip x xVals
+        let xNameVals = List.zip xs xVals
         let fBodyEnv = xNameVals @ (f, fClosure) :: fDeclEnv
         eval fBody fBodyEnv
       | _ -> failwith "eval Call: not a function"

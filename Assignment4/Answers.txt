@@ -45,10 +45,10 @@ run (fromString "let f x = x * x * x * x * x * x * x * x in let g y = if y = 0 t
 val it: int = 167731333
 
 Exercise 4.3
-Changes made in Absyn.fs(12-13), Fun.fs(55-66)
+Changes made in Absyn.fs(12-13), Fun.fs(27, 55-66)
 
 Exercise 4.4
 Changes made in FunPar.fsy(30-31, 66-67, 75-83)
 
 Exercise 4.5
-Changes made in FunPAr.fsy(17, 22, 57-58), FunLex.fsl(56-57)
+Changes made in FunPar.fsy(17, 22, 57-58), FunLex.fsl(56-57)
