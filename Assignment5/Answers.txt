@@ -3,16 +3,27 @@
 ##Exercise 5.1
 
 # (A)
-    Code can be found in Program.fs line 4-11
+    Coded in Program.fs line 4-11
     
 # (B)
-
+    Coded in Exe5_1/Program.cs
 
 ##Exercise 5.7
 
     Can be found in TypeInference.fs line 54
 
 ##Exercise 6.1
+    From ./Fun run:
+        $ dotnet fsi -r ./FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.fs Parse.fs HigherFun.fs ParseAndRunHigher.fs
+    And in fsi write:
+        open ParseAndRunHigher;;
+        run <| fromString "let add x = let f y = x+y in f end in add 2 5 end";;
+        run <| fromString "let add x = let f y = x+y in f end in let addtwo = add 2 in addtwo 5 end end";;
+        run <| fromString "let add x = let f y = x+y in f end in let addtwo = add 2 in let x = 77 in addtwo 5 end end end";;
+        run <| fromString "let add x = let f y = x+y in f end in add 2 end";;
+    
+    In the third function the inner x is assigned 77, but that is never used in the calculation, because x is never used in the body of that statement.
+    In the last function, the result is a closure, because the add function returns another function, which expect an input. But since this is never given a closure of adds environment is returned.
 
 ##Exercise 6.2
 

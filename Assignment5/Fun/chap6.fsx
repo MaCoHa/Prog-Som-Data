@@ -1,4 +1,3 @@
-
 (* Section 6.2.2 *)
 (* Does not work because we can't generalize type for x as it depends on type of y. *)
 let g y =
