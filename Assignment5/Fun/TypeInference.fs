@@ -53,7 +53,6 @@ type typ =
      | TypB                                (* booleans                   *)
      | TypF of typ * typ                   (* (argumenttype, resulttype) *)
      | TypV of typevar                     (* type variable              *)
-     | TypL of typ                         (* list                       *)
 
 and tyvarkind =  
      | NoLink of string                    (* uninstantiated type var.   *)
