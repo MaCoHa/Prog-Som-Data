@@ -26,6 +26,7 @@
     <None Include="Fun\chap5.fsx" />
     <Content Include="Answers.txt" />
     <Compile Include="Program.fs" />
+    <Content Include="Exe5_1.java" />
   </ItemGroup>
 
 </Project>
