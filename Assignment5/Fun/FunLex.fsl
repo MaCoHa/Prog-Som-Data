@@ -6,7 +6,7 @@
 
 module FunLex
 
-open (*Microsoft.*) FSharp.Text.Lexing
+open (*Microsoft.*)FSharp.Text.Lexing
 open FunPar;
 
 let lexemeAsString lexbuf = 
@@ -53,6 +53,8 @@ rule Token = parse
   | '*'             { TIMES }                     
   | '/'             { DIV }                     
   | '%'             { MOD }
+  | "||"            { OR }
+  | "&&"            { AND }
   | '('             { LPAR }
   | ')'             { RPAR }
   | eof             { EOF }

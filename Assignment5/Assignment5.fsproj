@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
     <Compile Include="Fun\Absyn.fs" />
     <Compile Include="Fun\Fun.fs" />
     <Compile Include="Fun\TypeInference.fs" />
@@ -25,6 +24,8 @@
     <Compile Include="Fun\HigherFun.fs" />
     <None Include="Fun\chap6.fsx" />
     <None Include="Fun\chap5.fsx" />
+    <Content Include="Answers.txt" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
 </Project>
