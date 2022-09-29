@@ -51,7 +51,7 @@ let rec unique xs =
 type typ =
      | TypI                                (* integers                   *)
      | TypB                                (* booleans                   *)
-     | TypL of typ                         (* list, element type is typ  *)
+     //| TypL of typ                         (* list, element type is typ  *)
      | TypF of typ * typ                   (* (argumenttype, resulttype) *)
      | TypV of typevar                     (* type variable              *)
 
@@ -135,6 +135,7 @@ let rec typeToString t : string =
     | TypB         -> "bool"
     | TypV _       -> failwith "typeToString impossible"
     | TypF(t1, t2) -> "function"
+    //| TypL(l1)     -> "list"
 
 (* Pretty-print type, using names 'a, 'b, ... for type variables *)
 
@@ -148,6 +149,7 @@ let rec showType t : string =
           | (NoLink name, _) -> name
           | _                -> failwith "showType impossible"
         | TypF(t1, t2) -> "(" + pr t1 + " -> " + pr t2 + ")"
+        //| TypL(l1)     -> "(" + pr l1 + ")"
     pr t 
 
 let rec showTEnv tenv =
