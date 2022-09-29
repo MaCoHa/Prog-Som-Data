@@ -1,0 +1,24 @@
+###Assignment 5
+
+##Exercise 5.1
+
+# (A)
+    Code can be found in Program.fs line 4-11
+    
+# (B)
+
+
+##Exercise 5.7
+
+
+##Exercise 6.1
+
+##Exercise 6.2
+
+##Exercise 6.3
+
+##Exercise 6.4
+
+##Exercise 6.5
+    
+
