@@ -6,7 +6,8 @@ public class Exe5_1 {
         int[] ys = new int[] { 2, 3, 4, 7 };
         
         int[] sorted = Merge(xs, ys);
-        Console.WriteLine(sorted.ToString());
+
+        PrintLists(xs, ys, sorted);
     }
     
     public static int[] Merge(int[] xs, int[] ys) {
@@ -24,5 +25,15 @@ public class Exe5_1 {
             }
         }
         return lst;
+    }
+
+    public static void PrintLists(int[] xs, int[] ys, int[] sorted)
+    {
+        Console.Write("Merge(");
+        Console.Write("[{0}]", string.Join(", ", xs));
+        Console.Write(", ");
+        Console.Write("[{0}]", string.Join(", ", ys));
+        Console.WriteLine(") =>");
+        Console.WriteLine("[{0}]", string.Join(", ", sorted));
     }
 }
