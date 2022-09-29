@@ -4,6 +4,8 @@ type token =
   | EOF
   | LPAR
   | RPAR
+  | OR
+  | AND
   | EQ
   | NE
   | GT
@@ -31,6 +33,8 @@ type tokenId =
     | TOKEN_EOF
     | TOKEN_LPAR
     | TOKEN_RPAR
+    | TOKEN_OR
+    | TOKEN_AND
     | TOKEN_EQ
     | TOKEN_NE
     | TOKEN_GT
@@ -63,6 +67,8 @@ type nonTerminalId =
     | NONTERM_AtExpr
     | NONTERM_AppExpr
     | NONTERM_Const
+    | NONTERM_Names
+    | NONTERM_Args
 /// This function maps tokens to integer indexes
 val tagOfToken: token -> int
 
