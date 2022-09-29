@@ -51,6 +51,7 @@ let rec unique xs =
 type typ =
      | TypI                                (* integers                   *)
      | TypB                                (* booleans                   *)
+     | TypL of typ                         (* list, element type is typ  *)
      | TypF of typ * typ                   (* (argumenttype, resulttype) *)
      | TypV of typevar                     (* type variable              *)
 

@@ -10,6 +10,7 @@
 
 ##Exercise 5.7
 
+    TypeInference.fs line 54
 
 ##Exercise 6.1
 
