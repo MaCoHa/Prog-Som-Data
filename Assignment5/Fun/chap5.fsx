@@ -1,4 +1,3 @@
-
 (* Higher-order functions and anonymous functions in F# *)
 let rec map f xs = 
     match xs with 
