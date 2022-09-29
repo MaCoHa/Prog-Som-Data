@@ -63,6 +63,9 @@ let rec eval (e : expr) (env : value env) : int =
         let fBodyEnv = (x, xVal) :: (f, fClosure) :: fDeclEnv
         eval fBody fBodyEnv
       | _ -> failwith "eval Call: not a function"
+    | Fun (eLhs, eRhs) ->
+        let bodyEnv = (eLhs,(lookup env eLhs))::env 
+        eval eRhs bodyEnv
     | Call _ -> failwith "eval Call: not first-order function"
 
 (* Evaluate in empty environment: program must have no free variables: *)
