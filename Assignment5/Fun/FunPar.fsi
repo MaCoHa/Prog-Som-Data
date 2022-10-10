@@ -5,6 +5,7 @@ type token =
   | LPAR
   | RPAR
   | EQ
+  | IMP
   | NE
   | GT
   | LT
@@ -21,6 +22,7 @@ type token =
   | IF
   | IN
   | LET
+  | FUN
   | NOT
   | THEN
   | TRUE
@@ -32,6 +34,7 @@ type tokenId =
     | TOKEN_LPAR
     | TOKEN_RPAR
     | TOKEN_EQ
+    | TOKEN_IMP
     | TOKEN_NE
     | TOKEN_GT
     | TOKEN_LT
@@ -48,6 +51,7 @@ type tokenId =
     | TOKEN_IF
     | TOKEN_IN
     | TOKEN_LET
+    | TOKEN_FUN
     | TOKEN_NOT
     | TOKEN_THEN
     | TOKEN_TRUE
