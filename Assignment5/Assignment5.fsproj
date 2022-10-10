@@ -9,6 +9,7 @@
     <Compile Include="Fun\Absyn.fs" />
     <Compile Include="Fun\Fun.fs" />
     <Compile Include="Fun\HigherFun.fs" />
+    <Compile Include="Fun\TypedFun.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
