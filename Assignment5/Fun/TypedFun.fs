@@ -37,6 +37,7 @@ type typ =
   | TypI                                (* int                         *)
   | TypB                                (* bool                        *)
   | TypF of typ * typ                   (* (argumenttype, resulttype)  *)
+  | TypL of typ                         (* Added type for lists ex 5.7 *)
 
 (* New abstract syntax with explicit types, instead of Absyn.expr: *)
 
@@ -50,6 +51,7 @@ type tyexpr =
   | Letfun of string * string * typ * tyexpr * typ * tyexpr
           (* (f,       x,       xTyp, fBody,  rTyp, letBody *)
   | Call of tyexpr * tyexpr
+  | ListExpr of tyexpr list * typ
 
 (* A runtime value is an integer or a function closure *)
 
