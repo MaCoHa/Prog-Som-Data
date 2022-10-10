@@ -51,7 +51,7 @@ type tyexpr =
   | Letfun of string * string * typ * tyexpr * typ * tyexpr
           (* (f,       x,       xTyp, fBody,  rTyp, letBody *)
   | Call of tyexpr * tyexpr
-  | ListExpr of tyexpr list * typ
+  | ListExpr of tyexpr list * typ (* ex 5.7 (type list)*)
 
 (* A runtime value is an integer or a function closure *)
 
