@@ -12,7 +12,7 @@ let g y =
 g 2
 
 (* Type Inference *)
-#r "/Users/nielshallenberg/fsharp/FsLexYacc.Runtime.dll"
+#r "FsLexYacc.Runtime.dll"
 #load "Absyn.fs"
 #load "FunPar.fs"
 #load "FunLex.fs"
