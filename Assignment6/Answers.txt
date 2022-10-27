@@ -1,8 +1,5 @@
-﻿
-
-exe 7.1
-The Abstract Syntax tree for  fromFile "ex1.c" see Exercise7_1_syntax-tree.jpg
-
+﻿exe 7.1
+    The Abstract Syntax tree for fromFile "ex1.c" see Exercise7_1_syntax-tree.jpg
 
 exe7.2
     setup
@@ -26,8 +23,12 @@ exe7.3
     exe 7.3.iii
         run (fromFile "exe7_3iii.c") [7];; //1 4 2 0
 
+exe7.4
+    Changes made in:
+        Absyn.fs(26 - 27) - declared PreInc and PreAdd
+        Interc.fs(197-202) - handling PreInc and PreAdd
+
 exe7.5
     dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
     open ParseAndRun;;
     run (fromFile "exe7_5.c") [2];; //1 2 3
-
