@@ -34,12 +34,12 @@
     file Fun/FunPar.fsy lines 14, 16(IMP), 21(IMP), 41
     
 ##Exercise 6.4
-    i: Please have a look at "filename"
+    i: Proof found in exe6_4_ab.pdf, page 1
         - explenation: Since the function "let f x = 1 in f f end" is non-circular and finite (since f f = 1, since: f(x) = 1, thus f f = f(f(x) = 1) = 1
                        = f f = 1
                        and having that f is let-bound and everything evaluates to int (since f(x) = 1 we know that forall x, f(x) -> int, so the type of x does not matter in this case), the type of f should be polymorphic.
     
-    ii: please have a look at "filename"
+    ii: Proof found in exe6_4_ab.pdf, page 2
         - explenation:
                        First of all, there is a mistake in the task. This will not evaluate, since "if x < 10, then f(x+1) in f(20)" this will create an infinite loop. Due to this, we have made the assumption that the task was to solve the following instead of what was written in the exercise in the book -> "let f x = if x > 10 then 42 else f(x+1) in f 20 end" -> since this will not create an infinite loop.
                        
