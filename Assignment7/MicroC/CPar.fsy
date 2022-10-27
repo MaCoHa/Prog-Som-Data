@@ -15,14 +15,17 @@ let nl = CstI 10
 %token <string> CSTSTRING NAME
 
 %token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE FOR
-%token INC DEC PLUS MINUS TIMES DIV MOD
+%token INC DEC
+%token PLUS MINUS TIMES DIV MOD
 %token EQ NE GT LT GE LE
 %token NOT SEQOR SEQAND
+%token TIF TELSE
 %token LPAR RPAR LBRACE RBRACE LBRACK RBRACK SEMI COMMA ASSIGN AMP
 %token EOF
 
 %right ASSIGN             /* lowest precedence */
 %nonassoc PRINT
+%left TIF TELSE
 %left SEQOR
 %left SEQAND
 %left EQ NE 
@@ -100,14 +103,14 @@ StmtM:  /* No unbalanced if-else */
   | Block                               { $1                   }
   | IF LPAR Expr RPAR StmtM ELSE StmtM  { If($3, $5, $7)       }
   | WHILE LPAR Expr RPAR StmtM          { While($3, $5)        }
-  | FOR LPAR Expr SEMI Expr SEMI Expr RPAR StmtM            { Block [Stmt (Expr $3); Stmt (While($5, Block [Stmt $9; Stmt (Expr $7)])) ] }
+  | FOR LPAR Expr SEMI Expr SEMI Expr RPAR StmtM    { Block [Stmt (Expr $3); Stmt (While($5, Block [Stmt $9; Stmt (Expr $7)])) ] }
 ;
 
 StmtU:
     IF LPAR Expr RPAR StmtM ELSE StmtU  { If($3, $5, $7)       }
   | IF LPAR Expr RPAR Stmt              { If($3, $5, Block []) }
   | WHILE LPAR Expr RPAR StmtU          { While($3, $5)        }
-  | FOR LPAR Expr SEMI Expr SEMI Expr RPAR StmtM            { Block [Stmt (Expr $3); Stmt (While($5, Block [Stmt $9; Stmt (Expr $7)])) ] }
+  | FOR LPAR Expr SEMI Expr SEMI Expr RPAR StmtU    { Block [Stmt (Expr $3); Stmt (While($5, Block [Stmt $9; Stmt (Expr $7)])) ] }
 ;
 
 Expr: 
@@ -122,8 +125,8 @@ ExprNotAccess:
   | NOT Expr                            { Prim1("!", $2)      }
   | PRINT Expr                          { Prim1("printi", $2) }
   | PRINTLN                             { Prim1("printc", nl) }
-  | INC NAME                            { PreInc(AccVar $2) }
-  | DEC NAME                            { PreDec(AccVar $2) }
+  | INC NAME                            { PreInc(AccVar $2)  }
+  | DEC NAME                            { PreDec(AccVar $2)  }
   | Expr PLUS  Expr                     { Prim2("+",  $1, $3) }
   | Expr MINUS Expr                     { Prim2("-",  $1, $3) }
   | Expr TIMES Expr                     { Prim2("*",  $1, $3) }
@@ -137,6 +140,7 @@ ExprNotAccess:
   | Expr LE    Expr                     { Prim2("<=", $1, $3) }
   | Expr SEQAND Expr                    { Andalso($1, $3)     }
   | Expr SEQOR  Expr                    { Orelse($1, $3)      }
+  | Expr TIF Expr TELSE Expr          { TerIf($1, $3, $5)   }
 ;
 
 AtExprNotAccess:

@@ -40,13 +40,6 @@
     <Compile Include="MicroC\Interp.fs" />
     <Content Include="MicroC\grammar.txt" />
     <Content Include="MicroC\FSharp.Core.dll" />
-    <ClCompile Include="MicroC\exe7_5.c" />
-    <ClCompile Include="MicroC\exe7_3iii.c" />
-    <ClCompile Include="MicroC\exe7_3ii.c" />
-    <ClCompile Include="MicroC\exe7_3i.c" />
-    <ClCompile Include="MicroC\exe7_2iii.c" />
-    <ClCompile Include="MicroC\exe7_2ii.c" />
-    <ClCompile Include="MicroC\exe7_2i.c" />
     <Content Include="MicroC\ex9.out" />
     <ClCompile Include="MicroC\ex9.c" />
     <Content Include="MicroC\ex8.out" />
@@ -66,6 +59,7 @@
     <Content Include="MicroC\ex25.code" />
     <ClCompile Include="MicroC\ex25.c" />
     <ClCompile Include="MicroC\ex24.c" />
+    <ClCompile Include="MicroC\exe8_3.c" />
     <Content Include="MicroC\ex23.out" />
     <ClCompile Include="MicroC\ex23.c" />
     <Content Include="MicroC\ex22.out" />
@@ -111,6 +105,7 @@
     <Compile Include="Imp\Naive.fs" />
     <ClCompile Include="Imp\array.c" />
     <Content Include="Imp\a.out" />
+    <Content Include="Answers.txt" />
   </ItemGroup>
 
 </Project>

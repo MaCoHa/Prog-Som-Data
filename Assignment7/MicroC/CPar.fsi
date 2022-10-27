@@ -12,6 +12,8 @@ type token =
   | COMMA
   | ASSIGN
   | AMP
+  | TIF
+  | TELSE
   | NOT
   | SEQOR
   | SEQAND
@@ -21,13 +23,13 @@ type token =
   | LT
   | GE
   | LE
-  | INC
-  | DEC
   | PLUS
   | MINUS
   | TIMES
   | DIV
   | MOD
+  | INC
+  | DEC
   | CHAR
   | ELSE
   | IF
@@ -55,6 +57,8 @@ type tokenId =
     | TOKEN_COMMA
     | TOKEN_ASSIGN
     | TOKEN_AMP
+    | TOKEN_TIF
+    | TOKEN_TELSE
     | TOKEN_NOT
     | TOKEN_SEQOR
     | TOKEN_SEQAND
@@ -64,13 +68,13 @@ type tokenId =
     | TOKEN_LT
     | TOKEN_GE
     | TOKEN_LE
-    | TOKEN_INC
-    | TOKEN_DEC
     | TOKEN_PLUS
     | TOKEN_MINUS
     | TOKEN_TIMES
     | TOKEN_DIV
     | TOKEN_MOD
+    | TOKEN_INC
+    | TOKEN_DEC
     | TOKEN_CHAR
     | TOKEN_ELSE
     | TOKEN_IF
