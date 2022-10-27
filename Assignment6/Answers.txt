@@ -12,6 +12,7 @@ exe7.2
         run (fromFile "exe7_2i.c") [2];; //29
     exe 7.2.ii
         run (fromFile "exe7_2ii.c") [20];; //2470
-
+    exe 7.2.iii
+        run (fromFile "exe7_2iii.c") [7];;
     
 
