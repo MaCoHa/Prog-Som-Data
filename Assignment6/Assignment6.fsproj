@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Include="Program.fs" />
+    <Content Include="Answers.txt" />
     <Content Include="Imp\README.TXT" />
     <Content Include="Imp\Parameters.exe" />
     <Compile Include="Imp\Parameters.cs" />
@@ -86,6 +87,7 @@
     <Content Include="MicroC\ex10.out" />
     <ClCompile Include="MicroC\ex10.c" />
     <Content Include="MicroC\ex1.out" />
+    <ClCompile Include="MicroC\exe7_2i.c" />
     <ClCompile Include="MicroC\ex1.c" />
     <Content Include="MicroC\CPar.fsy" />
     <Compile Include="MicroC\CPar.fsi" />

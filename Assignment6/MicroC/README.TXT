@@ -9,7 +9,7 @@ A. Generating and compiling the lexer and parser for micro-C, and
 
    fslex --unicode CLex.fsl
    fsyacc --module CPar CPar.fsy
-   dotnet fsi -r ~/fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+   dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
 
    open ParseAndRun;;
    fromFile "ex1.c";;
@@ -22,7 +22,7 @@ B. To compile and use the micro-C compiler
 
    fslex --unicode CLex.fsl
    fsyacc --module CPar CPar.fsy
-   dotnet fsi -r ../fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+   dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
    open ParseAndComp;;
    compileToFile (fromFile "ex11.c") "ex11.out";;
    compile "ex11";;
