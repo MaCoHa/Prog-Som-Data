@@ -50,6 +50,9 @@
     <Content Include="MicroC\ex5.out" />
     <ClCompile Include="MicroC\ex5.c" />
     <Content Include="MicroC\ex4.out" />
+    <ClCompile Include="MicroC\exe7_2ii.c" />
+    <ClCompile Include="MicroC\exe7_3ii.c" />
+    <ClCompile Include="MicroC\exe7_3iii.c" />
     <ClCompile Include="MicroC\ex4.c" />
     <Content Include="MicroC\ex3.out" />
     <ClCompile Include="MicroC\ex3.c" />
@@ -86,6 +89,8 @@
     <Content Include="MicroC\ex10.out" />
     <ClCompile Include="MicroC\ex10.c" />
     <Content Include="MicroC\ex1.out" />
+    <ClCompile Include="MicroC\exe7_2i.c" />
+    <ClCompile Include="MicroC\exe7_3i.c" />
     <ClCompile Include="MicroC\ex1.c" />
     <Content Include="MicroC\CPar.fsy" />
     <Compile Include="MicroC\CPar.fsi" />
@@ -98,6 +103,7 @@
     <Content Include="MicroC\bar" />
     <Compile Include="MicroC\Absyn.fs" />
     <Content Include="MicroC\a.out" />
+    <ClCompile Include="MicroC\exe7_2iii.c" />
   </ItemGroup>
 
 </Project>
