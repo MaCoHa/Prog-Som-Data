@@ -1,18 +1,17 @@
-# Exercis 7.1
+﻿
+
+exe 7.1
+The Abstract Syntax tree for  fromFile "ex1.c" see Exercise7_1_syntax-tree.jpg
 
 
-# Exercis 7.2
+exe7.2
+    setup
+        dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+        open ParseAndRun;;
+    exe 7.2.i
+        run (fromFile "exe7_2i.c") [2];; //29
+    exe 7.2.ii
+        run (fromFile "exe7_2ii.c") [20];; //2470
 
-## 7.1
-
-## 7.2
-
-## 7.3
-
-# Exercis 7.3
-
-# Exercis 7.4
-
-# Exercis 7.5
-
+    
 
