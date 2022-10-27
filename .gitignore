@@ -95,7 +95,7 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 # End of https://www.toptal.com/developers/gitignore/api/rider,fsharp
-/.idea/
+.idea/
 /Assignment1/.idea/
 /Assignment2/.idea/
 /Assignment3/.idea/
