@@ -8,7 +8,10 @@ exe8.3
         dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Machine.fs Comp.fs ParseAndComp.fs   
         open ParseAndComp;;
         compileToFile (fromFile "exe8_3.c") "exe8_3.out";;
-    TODO: make it run ++arr[++i] - giv mulighed for apply på expr i parseren
+        #quit;;
+        java Machine exe8_3.out 2
+    output - where arg n -> (n+1) (n+2) for n < 3
+        3 4
 
 exe8.4
 
