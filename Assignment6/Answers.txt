@@ -25,3 +25,9 @@ exe7.3
         run (fromFile "exe7_3ii.c") [20];; //2470
     exe 7.3.iii
         run (fromFile "exe7_3iii.c") [7];; //1 4 2 0
+
+exe7.5
+    dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+    open ParseAndRun;;
+    run (fromFile "exe7_5.c") [2];; //1 2 3
+

@@ -15,7 +15,7 @@ let nl = CstI 10
 %token <string> CSTSTRING NAME
 
 %token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE FOR
-%token PLUS MINUS TIMES DIV MOD
+%token INC DEC PLUS MINUS TIMES DIV MOD
 %token EQ NE GT LT GE LE
 %token NOT SEQOR SEQAND
 %token LPAR RPAR LBRACE RBRACE LBRACK RBRACK SEMI COMMA ASSIGN AMP
@@ -122,6 +122,8 @@ ExprNotAccess:
   | NOT Expr                            { Prim1("!", $2)      }
   | PRINT Expr                          { Prim1("printi", $2) }
   | PRINTLN                             { Prim1("printc", nl) }
+  | INC NAME                            { PreInc(AccVar $2) }
+  | DEC NAME                            { PreDec(AccVar $2) }
   | Expr PLUS  Expr                     { Prim2("+",  $1, $3) }
   | Expr MINUS Expr                     { Prim2("-",  $1, $3) }
   | Expr TIMES Expr                     { Prim2("*",  $1, $3) }
