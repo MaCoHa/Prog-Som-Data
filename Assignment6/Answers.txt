@@ -11,4 +11,7 @@ exe7.2
         open ParseAndRun;;
     exe 7.2.i
         run (fromFile "exe7_2i.c") [2];; //29
+    exe 7.2.ii
+        run (fromFile "exe7_2ii.c") [20];; //2470
+
     

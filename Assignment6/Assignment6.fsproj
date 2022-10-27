@@ -51,6 +51,7 @@
     <Content Include="MicroC\ex5.out" />
     <ClCompile Include="MicroC\ex5.c" />
     <Content Include="MicroC\ex4.out" />
+    <ClCompile Include="MicroC\exe7_2ii.c" />
     <ClCompile Include="MicroC\ex4.c" />
     <Content Include="MicroC\ex3.out" />
     <ClCompile Include="MicroC\ex3.c" />
