@@ -13,13 +13,15 @@ exe7.2
     exe 7.2.ii
         run (fromFile "exe7_2ii.c") [20];; //2470
     exe 7.2.iii
-        run (fromFile "exe7_2iii.c") [7];;
+        run (fromFile "exe7_2iii.c") [7];; //1 4 2 0
 
 exe7.3
     setup
         dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
         open ParseAndRun;;
-    exe 7.2.i
+    exe 7.3.i
         run (fromFile "exe7_3i.c") [3];; //29
-    exe 7.2.ii
+    exe 7.3.ii
         run (fromFile "exe7_3ii.c") [20];; //2470
+    exe 7.3.iii
+        run (fromFile "exe7_3iii.c") [7];; //1 4 2 0

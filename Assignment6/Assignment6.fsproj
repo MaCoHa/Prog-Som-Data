@@ -52,6 +52,7 @@
     <Content Include="MicroC\ex4.out" />
     <ClCompile Include="MicroC\exe7_2ii.c" />
     <ClCompile Include="MicroC\exe7_3ii.c" />
+    <ClCompile Include="MicroC\exe7_3iii.c" />
     <ClCompile Include="MicroC\ex4.c" />
     <Content Include="MicroC\ex3.out" />
     <ClCompile Include="MicroC\ex3.c" />
@@ -102,6 +103,7 @@
     <Content Include="MicroC\bar" />
     <Compile Include="MicroC\Absyn.fs" />
     <Content Include="MicroC\a.out" />
+    <ClCompile Include="MicroC\exe7_2iii.c" />
   </ItemGroup>
 
 </Project>
