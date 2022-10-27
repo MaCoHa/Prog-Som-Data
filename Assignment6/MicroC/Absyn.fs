@@ -22,6 +22,8 @@ and expr =
   | Prim2 of string * expr * expr    (* Binary primitive operator   *)
   | Andalso of expr * expr           (* Sequential and              *)
   | Orelse of expr * expr            (* Sequential or               *)
+  | PreInc of access                 (* C/C++/Java/C# ++i or ++a[e] *)
+  | PreDec of access                 (* C/C++/Java/C# --i or --a[e] *)
   | Call of string * expr list       (* Function call f(...)        *)
                                                                    
 and access =                                                       
