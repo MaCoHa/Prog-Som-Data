@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <Compile Include="Program.fs" />
-    <Content Include="Answers.txt" />
     <Content Include="Imp\README.TXT" />
     <Content Include="Imp\Parameters.exe" />
     <Compile Include="Imp\Parameters.cs" />

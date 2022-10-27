@@ -1,8 +1,7 @@
 ﻿
 
 exe 7.1
-
-
+The Abstract Syntax tree for  fromFile "ex1.c" see Exercise7_1_syntax-tree.jpg
 
 
 exe7.2
@@ -13,6 +12,8 @@ exe7.2
         run (fromFile "exe7_2i.c") [3];; //29
     exe 7.2.ii
         run (fromFile "exe7_2ii.c") [20];; //2470
+    exe 7.2.iii
+        run (fromFile "exe7_2iii.c") [7];;
 
 exe7.3
     setup
