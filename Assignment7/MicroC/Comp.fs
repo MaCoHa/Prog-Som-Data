@@ -32,6 +32,7 @@
 
 module Comp
 
+open System.Diagnostics
 open System.IO
 open Absyn
 open Machine

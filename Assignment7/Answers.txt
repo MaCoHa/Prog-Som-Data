@@ -26,11 +26,15 @@ exe8.5
         dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
         open ParseAndRun;;
         run (fromFile "exe8_5.c") [17];; //1
-        run (fromFile "exe8_5.c") [0];; //0
+        run (fromFile "exe8_5.c") [0];;  //0
 
 exe8.6
-
-
-
+    changes made in
+        Absyn.fs(41), CLex.fsl(32-33), CPar.fsy(17, 107, 183-186), Interp.fs(147-152)
+    run
+        dotnet fsi -r ./fsharp/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+        open ParseAndRun;;
+        run (fromFile "exe8_6.c") [17];; //42
+        run (fromFile "exe8_6.c") [3];;  //69
 
 

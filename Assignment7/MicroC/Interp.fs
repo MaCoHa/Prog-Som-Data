@@ -27,6 +27,7 @@
 
 module Interp
 
+open System.Diagnostics
 open Absyn
 
 (* ------------------------------------------------------------------- *)
@@ -143,6 +144,12 @@ let rec exec stmt (locEnv : locEnv) (gloEnv : gloEnv) (store : store) : store =
           | s1::sr -> loop sr (stmtordec s1 locEnv gloEnv store)
       loop stmts (locEnv, store) 
     | Return _ -> failwith "return not implemented"
+    | Switch (exp, cases) ->
+        let value, store1 = eval exp locEnv gloEnv store
+        let caseOption = List.tryFind (fun (condition, _) -> condition = value) cases
+        match caseOption with
+        | None -> store
+        | Some (_, case) -> exec case locEnv gloEnv store1
 
 and stmtordec stmtordec locEnv gloEnv store = 
     match stmtordec with 
@@ -201,7 +208,7 @@ and eval e locEnv gloEnv store : int * store =
                     let var = ((getSto store1 loc) - 1)
                     (var, setSto store1 loc var)
     | TerIf(con, exp1, exp2) ->
-        let (v, store1) = eval con locEnv gloEnv store
+        let v, store1 = eval con locEnv gloEnv store
         if v<>0 then eval exp1 locEnv gloEnv store1
                 else eval exp2 locEnv gloEnv store1
 
