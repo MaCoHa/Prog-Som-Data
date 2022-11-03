@@ -10,6 +10,7 @@
 
 ##Exercise 5.7
     Can be found in TypeInference.fs line 56, 111, 140, 154, 189, 190, 233
+    and TypedFun.fs line 40, 48, 67, 109
 
 ##Exercise 6.1
     From ./Fun run:
