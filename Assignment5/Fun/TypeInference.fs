@@ -53,6 +53,8 @@ type typ =
      | TypB                                (* booleans                   *)
      | TypF of typ * typ                   (* (argumenttype, resulttype) *)
      | TypV of typevar                     (* type variable              *)
+     | TypL of typ                         (* list, element type is typ   *)
+
 
 and tyvarkind =  
      | NoLink of string                    (* uninstantiated type var.   *)
@@ -106,6 +108,7 @@ let rec freeTypeVars t : typevar list =
     | TypB        -> []
     | TypV tv     -> (*(printfn "%s" ("found free tyvar"));*) [tv]
     | TypF(t1,t2) -> union(freeTypeVars t1, freeTypeVars t2)
+    | TypL lt     -> freeTypeVars lt //check recursively for free variables, in case of functions
 
 let occurCheck tyvar tyvars =                     
     if mem tyvar tyvars then failwith "type error: circularity" else ()
@@ -134,6 +137,7 @@ let rec typeToString t : string =
     | TypB         -> "bool"
     | TypV _       -> failwith "typeToString impossible"
     | TypF(t1, t2) -> "function"
+    | TypL _       -> "list" //its a list
 
 (* Pretty-print type, using names 'a, 'b, ... for type variables *)
 
@@ -147,6 +151,7 @@ let rec showType t : string =
           | (NoLink name, _) -> name
           | _                -> failwith "showType impossible"
         | TypF(t1, t2) -> "(" + pr t1 + " -> " + pr t2 + ")"
+        | TypL lt       -> pr lt + " list" //recursively define what generic type the list has
     pr t 
 
 let rec showTEnv tenv =
@@ -181,6 +186,8 @@ let rec unify t1 t2 : unit =
     | (TypI,     t) -> failwith ("type error: int and " + typeToString t)
     | (TypB,     t) -> failwith ("type error: bool and " + typeToString t)
     | (TypF _,   t) -> failwith ("type error: function and " + typeToString t)
+    | (TypL t1, TypL t2) -> unify t1 t2 //unify types recursively
+    | (TypL _,   t) -> failwith ("type error: list and " + typeToString t) //cannot unify list with not list
 
 (* Generate fresh type variables *)
 
@@ -223,6 +230,7 @@ let rec copyType subst t : typ =
     | TypF(t1,t2) -> TypF(copyType subst t1, copyType subst t2)
     | TypI        -> TypI
     | TypB        -> TypB
+    | TypL lt     -> TypL (copyType subst lt) //recursively copy the types
 
 (* Create a type from a type scheme (tvs, t) by instantiating all the
    type scheme's parameters tvs with fresh type variables *)
