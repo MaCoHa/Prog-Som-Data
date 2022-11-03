@@ -1,1 +1,42 @@
-24 19 1 5 25 15 1 13 0 1 1 0 0 12 15 -1 16 43 13 0 1 1 11 22 15 -1 13 0 1 1 13 0 1 1 11 0 1 1 12 15 -1 15 0 13 0 1 1 11 13 0 0 1 11 7 18 18 15 -1 21 0
+24 /*(load_args) --> (start vm)*/
+19 1 5 /*(start main, (takes "1" arguemnt) (starts at "5") (CALL (1, 5))*/
+25 /*(stop)*/
+15 1 /*(increment stack pointer INCSP (1)) (by "1")*/
+13 /*(Get base-pointer GETBP)*/
+0 1 /*(Push constant "1" CSTI (1))*/ 
+1 /*(Add)*/
+0 0 /*(Push constant "0" CSTI (0))*/
+12 /*(Store indirect STI)*/
+15 -1 /*(Increase stack top by "-1" INCSP (-1))*/
+16 43 /*(GoTo "43" GOTO the spot 43 on the stack)*/
+13 /*(Load base-pointer GETBP)*/
+0 1 /*(Push constant "1" on the stack, CSTI i)*/
+1 /*(Add)*/
+11 /*(Load indirect LDI)*/
+22 /*(PRINTI)*/
+15 -1 /*(Increment stack top by (-1) INCSP (-1))*/
+13 /*(GETBP)*/
+0 1 /*(Push (1) to the stack, CSTI (1))*/
+1 /*(ADD)*/
+13/*(GETBP)*/
+0 1 /*(Push (1) onto the stack CSTI (1))*/
+1/*(ADD)*/
+11 /*(LDI)*/
+0 1 /*(push constant (1) onto the stack CSTI (1))*/
+1 /*(ADD)*/
+12/*(STI)*/
+15 -1/*(Increment stack top by (-1) INCSP (-1))*/
+15 0/*(Increment stack top by (0) INCSP (0))*/
+13/*(GETBP)*/
+0 1 /*(Push constant (1) onto the stack CSTI (1))*/
+1/*(ADD)*/
+11/*(LDI)*/
+13/*(GETBP)*/
+0 0/*(Push constant (0) onto the stack CSTI (0))*/
+1/*(ADD)*/
+11/*(LDI)*/
+7/*(LT)*/
+18 18/*(Jump to (18) if (18 != 0) IFNZRO (18))*/
+15 -1/*(Increment stack top by (-1) INCSP (-1))*/
+21/*(PRINTI)*/
+0/*(PUSH CONSTANT ON THE STACK)*/

@@ -1,4 +1,9 @@
 ﻿exe8.1
+    i: output visible in file ex8_1p1_answ.txt
+    ii:
+    Nested code block representation visible in the generated code:
+        it is visible as the instructions printed until the number "64" is printed in the terminal, at the start of a line,
+        since 
 
 
 exe8.3
