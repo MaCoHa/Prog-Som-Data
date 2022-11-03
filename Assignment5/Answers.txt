@@ -9,8 +9,7 @@
     Coded in Exe5_1/Program.cs
 
 ##Exercise 5.7
-
-    Can be found in TypeInference.fs line 54
+    Can be found in TypeInference.fs line 56, 111, 140, 154, 189, 190, 233
 
 ##Exercise 6.1
     From ./Fun run:
