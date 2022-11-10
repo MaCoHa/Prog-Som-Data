@@ -1,11 +1,13 @@
-exe29.1
+exe 9.1
+
+    i
+        Selsort.il 
+    
+    ii
+        Selsort.jvmbytecode lines 167 - 210
 
 
-
-
-
-
-exe9.2
+exe 9.2
     ii
         See exe9_2ii.png for picture of observation
         dotnet --version
