@@ -1,0 +1,18 @@
+exe29.1
+
+
+
+
+
+
+exe9.2
+    ii
+        See exe9_2ii.png for picture of observation
+        dotnet --version
+        > 7.0.100
+        The graph indeed shows that the concatenation method uses the garbage collector a lot more
+        than the other part of the program, since all the separate strings are no longer needed (and
+        can be collected) after they are concatenated.
+    iii
+
+
