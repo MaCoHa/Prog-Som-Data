@@ -1,4 +1,20 @@
 ﻿exe8.1
+    i: output visible in file ex8_1p1_answ.txt
+    ii:
+    Study the generated symbolic bytecode. Write up the bytecode in a more structured
+    way with labels only at the beginning of the line (as in this chapter). Write
+    the corresponding micro-C code to the right of the stack machine code. Note that
+    ex5.c has a nested scope (a block{ ... }inside a function body); how is that
+    visible in the generated code?:
+        - check ex3.out and ex5.out for the answer to this.
+        -- It is visible when the symbolic bytecode for "CALL" is loaded. this means that a new function is executed.
+    Trace the execution using java Machinetrace ex3.out 4, and explain
+    the stack contents and what goes on in each step of execution, and especially how the
+    low-level bytecode instructions map to the higher-level features of micro-C. You can
+    capture the standard output from a command prompt (in a file ex3trace.txt)
+    using the Unix-style notation:
+        -
+        
 
 
 exe8.3
