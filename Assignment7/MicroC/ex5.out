@@ -1,1 +1,55 @@
-24 19 1 5 25 15 1 13 0 1 1 13 0 0 1 11 12 15 -1 15 1 13 0 0 1 11 13 0 2 1 19 2 57 15 -1 13 0 2 1 11 22 15 -1 15 -1 13 0 1 1 11 22 15 -1 15 -1 21 0 13 0 1 1 11 13 0 0 1 11 13 0 0 1 11 3 12 15 -1 15 0 21 1
+24 /*(load_args) --> (start vm)*/
+19 1 5 /*(start main, (takes "1" arguemnt) (starts at "5"))*/
+25 /*(stop)*/
+15 /*(increment stack pointer)*/ 1 /*(by "1")*/
+13 /*(Load basepointer on the stack (GETBP))*/
+0 1 /*(Push constant "1" on the stack)*/
+1 /*(ADD (take i1 and i2 on the stack, and perform: (i1 + i2))*/ 
+13 /*(load basepointer on the stack (GETBP))*/
+0 0 /*(Push constant (0) on the stack (CSTI 0))*/
+1 /*(ADD)*/
+11 /*(load indirect - load from the stack at stack[i] instead of just i. (can point to other stacks. Example: LDI 20 points to 40, 40 points to a word 60. Thus the LDI 20 would yield 60)*/
+12 /*(Store indierct - Take a variable and store it at stack[i] - we found the destination of the pointer stack[i] on the line above, now we insert a value at that spot.)*/
+15 -1 /*(shrink stack by "-1")*/
+15 1 /*(Grow stack by "1")*/
+13 /*(Load basepointer (GETBP))*/
+0 0 /*(push constant on the stack (CSTI 0))*/
+1 /*(ADD)*/
+11 /*(Load indirect - load from the stack at s, stack[i] instead of just s, i)*/
+13 /*(get basepointer GETBP)*/
+0 2 /*(Push constant "2" on the stack (CSTI 2))*/
+1 /*(ADD)*/
+19 2 57 /*(CALL "inner function" using 2 arguments, starts at "57")*/
+15 -1 /*(Shrink stack by "-1", since m < 0 and m = -1)*/
+13 /*(load basepointer GETBP)*/
+0 2 /*(Push constant "2" on the stack (CSTI 2))*/
+1 /*(ADD)*/
+11 /*(Load indirect - load at stack[i] instead of just i)*/
+22 /*(PRINTI - print integer)*/
+15 -1 /*(Shrink stack by "-1")*/
+15 -1 /*(Shrink stack by "-1")*/
+13 /*(load basepointer GETBP)*/
+0 1 /*(push constant "1" on the stack (CSTI 1))*/
+1 /*(ADD)*/
+11/*(Load indirect - load at stack[i] instead of just i - used since we have a pointer in the original "C" code "&r")*/
+22 /*(PRINTI - print integer)*/
+15 -1 /*(shrink stack by "-1")*/
+15 -1 /*(shrink stack by "-1")*/
+21 0 /*(RET "0")*/
+13 /*(load basepointer GETBP)*/ 
+0 1 /*(push constant "1" on the stack (CSTI 1))*/
+1 /*(ADD)*/
+11 /*(Load indirect - load at stack[i] instead of i)*/
+13 /*(Load basepointer GETBP)*/
+0 0 /*(push constant "0" on the stack (CSTI 0))*/
+1 /*(ADD)*/
+11 /*(load indirect - load at stack[i] instead of i)*/
+13 /*(load basepointer GETBP)*/
+0 0 /*(push constant "0" on the stack (CSTI 0))*/
+1 /*(ADD)*/
+11 /*(load indirect - load at stack[i] instead of [i])*/
+3 /*(MUL - multiply)*/
+12 /*(store indirect - at spot stack[i], store the value v)*/
+15 -1 /*(shrink stack by "-1")*/
+15 0 /*(grow the stack by "0")*/
+21 1 /*(return on "1")*/
