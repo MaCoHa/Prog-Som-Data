@@ -70,6 +70,8 @@ let rec deadcode C = (* Remove all code until next label *)
     | Label lab :: _  -> C
     | _         :: C1 -> deadcode C1
 
+
+
 //exe12.1
 let addIFZERO lab3 C =
     match C with
@@ -115,8 +117,18 @@ let rec addCST i C =
     | (_, IFZERO lab :: C1) -> C1
     | (0, IFNZRO lab :: C1) -> C1
     | (_, IFNZRO lab :: C1) -> addGOTO lab C1
+    //exe12.2
+    | (i, LT         :: CSTI j :: C1) when i < j -> addCST 1 C1
+    | (i, LT :: SWAP :: CSTI j :: C1) when j < i -> addCST 1 C1
     | _                     -> CSTI i :: C
-
+(* COMP
+         | "=="  -> [EQ]
+         | "!="  -> [EQ; NOT]
+         | "<"   -> [LT] DONE
+         | ">="  -> [LT; NOT]
+         | ">"   -> [SWAP; LT] DONE
+         | "<="  -> [SWAP; LT; NOT]
+*)
 (* ------------------------------------------------------------------- *)
 
 (* Simple environment operations *)
