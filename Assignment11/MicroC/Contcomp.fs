@@ -317,7 +317,7 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) (C : instr list) : inst
         let(labelse, C2) = addLabel C1
         cExpr e1 varEnv funEnv
            ( labelse :: cExpr e2 varEnv funEnv
-             (addIFZERO labthen C2))
+             (IFZERO labthen C2))
       | _ ->
         let (jumpend, C1) = makeJump C
         let (labtrue, C2) = addLabel(addCST 1 C1)
