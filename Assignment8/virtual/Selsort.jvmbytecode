@@ -164,49 +164,49 @@ Constant pool:
     flags: (0x0009) ACC_PUBLIC, ACC_STATIC
     Code:
       stack=4, locals=4, args_size=1
-         0: iconst_0  // Push int constant
-         1: istore_1 // Store int into local variable
-         2: iload_1  // Load int from local variable
-         3: aload_0 // Load reference from local variable
-         4: arraylength // Get length of array
-         5: if_icmpge     57 // If int comparison succeeds, branch to instruction at offset 57
-         8: iload_1 // Load int from local variable
-         9: istore_2 // Store int into local variable
-        10: iload_1 // Load int from local variable
-        11: iconst_1 // Push int constant
-        12: iadd // Add int
-        13: istore_3 // Store int into local variable
-        14: iload_3 // Load int from local variable
-        15: aload_0 // Load reference from local variable
-        16: arraylength // Get length of array
-        17: if_icmpge     37 // If int comparison succeeds, branch to instruction at offset 37
-        20: aload_0 // Load reference from local variable
-        21: iload_3 // Load int from local variable
-        22: iaload // Load int from array
+         0: iconst_0  // Push i to stack
+         1: istore_1 // Store int into i
+         2: iload_1  // Load int from i
+         3: aload_0 // Load ref for arr
+         4: arraylength // Get length of arr
+         5: if_icmpge     57 // If i < arr.lengt succeeds, enter
+         8: iload_1 // Load int from i
+         9: istore_2 // Store i into least
+        10: iload_1 // Load int from i
+        11: iconst_1 // Push j to stack
+        12: iadd // Add i + 1
+        13: istore_3 // Store i + 1 into j
+        14: iload_3 // Load int from j
+        15: aload_0 // Load reference from arr
+        16: arraylength // Get length of arr
+        17: if_icmpge     37 // If j < arr.lengt succeeds, enter
+        20: aload_0 // Load reference from arr
+        21: iload_3 // Load int from j
+        22: iaload // Load int from arr[j]
         23: aload_0 // Load reference from local variable
-        24: iload_2 // Load int from local variable
-        25: iaload // Load int from array
-        26: if_icmpge     31 // If int comparison succeeds, branch to instruction at offset 31
-        29: iload_3 // Load int from local variable
-        30: istore_2 // Store int into local variable
-        31: iinc          3, 1 // Increment local variable by constant
-        34: goto          14 // Branch always to target offset 14
-        37: aload_0 // Load reference from local variable
-        38: iload_1 // Load int from local variable
-        39: iaload // Load int from array
-        40: istore_3 // Store int into local variable
-        41: aload_0 // Load reference from local variable
-        42: iload_1 // Load int from local variable
-        43: aload_0 // Load reference from local variable
-        44: iload_2 // Load int from local variable
-        45: iaload // Load int from array
-        46: iastore // Store into int array
-        47: aload_0 // Load reference from local variable
-        48: iload_2 // Load int from local variable
-        49: iload_3 // Load int from local variable
-        50: iastore // Store into int array
-        51: iinc          1, 1 // Increment local variable by constant
-        54: goto          2 // Branch always to target offset 2
+        24: iload_2 // Load int from least
+        25: iaload // Load int from arr[least]
+        26: if_icmpge     31 // If arr[j] < arr[least] succeeds, enter
+        29: iload_3 // Load int from j
+        30: istore_2 // Store j into least
+        31: iinc          3, 1 // Increment j by 1
+        34: goto          14 // Branch begin loop again
+        37: aload_0 // Load reference from arr
+        38: iload_1 // Load int from i
+        39: iaload // Load int from arr[i]
+        40: istore_3 // Store arr[i] into tmp
+        41: aload_0 // Load reference from arr
+        42: iload_1 // Load int from i
+        43: aload_0 // Load reference from arr
+        44: iload_2 // Load int from least
+        45: iaload // Load int from arr[least]
+        46: iastore // Store into int arr[i]
+        47: aload_0 // Load reference from arr
+        48: iload_2 // Load int from least
+        49: iload_3 // Load int from tmp
+        50: iastore // Store tmp into int arr[least]
+        51: iinc          1, 1 // Increment i variable by 1
+        54: goto          2 // jump back to repeat loop
         57: return // Return void from method
       LineNumberTable: 
         line 21: 0 
