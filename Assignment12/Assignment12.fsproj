@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.fs" />
+    <Compile Include="MicroSMLpublic\Absyn.fs" />
+    <Compile Include="MicroSMLpublic\Comp.fs" />
+    <Compile Include="MicroSMLpublic\Contcomp.fs" />
+    <Compile Include="MicroSMLpublic\FunLex.fs" />
+    <Compile Include="MicroSMLpublic\FunPar.fs" />
+    <Compile Include="MicroSMLpublic\FunPar.fsi" />
+    <Compile Include="MicroSMLpublic\Machine.fs" />
+    <Compile Include="MicroSMLpublic\MicroSMLC.fs" />
+    <Compile Include="MicroSMLpublic\ParseTypeAndRun.fs" />
+    <None Include="MicroSMLpublic\queens.fsx" />
+    <Compile Include="MicroSMLpublic\TypeInference.fs" />
+  </ItemGroup>
+
+</Project>
