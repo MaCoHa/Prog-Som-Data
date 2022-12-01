@@ -8,20 +8,20 @@ A. Building the micro-SML command line compiler microsmlc:
     fslex --unicode FunLex.fsl
     fsyacc --module FunPar FunPar.fsy    
 
-   fsharpc --standalone -r:/Users/nielshallenberg/fsharp/FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.fs TypeInference.fs HigherFun.fs Machine.fs Contcomp.fs ParseTypeAndRun.fs MicroSMLC.fs -o microsmlc.exe
+   fsc --standalone -r:fsharp/FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.fs TypeInference.fs HigherFun.fs Machine.fs Contcomp.fs ParseTypeAndRun.fs MicroSMLC.fs -o microsmlc.exe
 
 Compiling the test program test.sml:
-  microsmlc.exe test.sml
+  ./microsmlc.exe test.sml
 
 Compiling the test program with tail call and other optimizations:
-  microsmlc.exe -opt test.sml
+  ./microsmlc.exe -opt test.sml
 
 Compiling AND evaluating the program with the evaluator in
 HigherFun.fs:
-  microsmlc.exe -eval test.sml
+  ./microsmlc.exe -eval test.sml
 
 Compiling AND output intermediate AST's
-  microsmlc.exe -verbose test.sml
+  ./microsmlc.exe -verbose test.sml
 
 The command line parameters can be combined.
 
